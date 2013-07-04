@@ -1,0 +1,49 @@
+- model_class = Entry
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:day)
+      %th= model_class.human_attribute_name(:weight)
+      %th= model_class.human_attribute_name(:systolic)
+      %th= model_class.human_attribute_name(:diastolic)
+      %th= model_class.human_attribute_name(:low_bag)
+      %th= model_class.human_attribute_name(:med_bag)
+      %th= model_class.human_attribute_name(:high_bag)
+      %th= model_class.human_attribute_name(:external_bag)
+      %th= model_class.human_attribute_name(:initial_drain)
+      %th= model_class.human_attribute_name(:total_uf)
+      %th= model_class.human_attribute_name(:avg_dwell_time)
+      %th= model_class.human_attribute_name(:blood_sugar)
+      %th= model_class.human_attribute_name(:epo_vial_opened)
+      %th= model_class.human_attribute_name(:comments)
+      %th= model_class.human_attribute_name(:monthly_id)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %td= link_to entry.id, entry_path(entry)
+        %td= entry.day
+        %td= entry.weight
+        %td= entry.systolic
+        %td= entry.diastolic
+        %td= entry.low_bag
+        %td= entry.med_bag
+        %td= entry.high_bag
+        %td= entry.external_bag
+        %td= entry.initial_drain
+        %td= entry.total_uf
+        %td= entry.avg_dwell_time
+        %td= entry.blood_sugar
+        %td= entry.epo_vial_opened
+        %td= entry.comments
+        %td= entry.monthly_id
+        %td=l entry.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_entry_path(entry), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), entry_path(entry), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_entry_path, :class => 'btn btn-primary'

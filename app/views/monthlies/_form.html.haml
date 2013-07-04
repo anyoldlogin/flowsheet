@@ -1,0 +1,12 @@
+= simple_form_for @monthly, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :user_id
+  = f.input :month
+  = f.input :day
+  = f.input :total_volume
+  = f.input :fill_volume
+  = f.input :therapy_time
+  = f.input :last_fill
+  = f.input :target_weight
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), monthlies_path, :class => 'btn'

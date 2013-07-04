@@ -1,0 +1,19 @@
+= simple_form_for @entry, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :day
+  = f.input :weight
+  = f.input :systolic
+  = f.input :diastolic
+  = f.input :low_bag
+  = f.input :med_bag
+  = f.input :high_bag
+  = f.input :external_bag
+  = f.input :initial_drain
+  = f.input :total_uf
+  = f.input :avg_dwell_time
+  = f.input :blood_sugar
+  = f.input :epo_vial_opened
+  = f.input :comments
+  = f.input :monthly_id
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), entries_path, :class => 'btn'

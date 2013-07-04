@@ -1,0 +1,9 @@
+Flowsheet
+Application to record daily metrics for PD.
+
+Todo:
+- clean up
+- refactor views to be more modular using partials
+- fix flow so that most of the action happens on home#index if logged in else poster
+- clean up gemfile using blocks
+- tests, test, TESTS!
