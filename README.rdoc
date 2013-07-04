@@ -6,4 +6,11 @@ Todo:
 - refactor views to be more modular using partials
 - fix flow so that most of the action happens on home#index if logged in else poster
 - clean up gemfile using blocks
+- redo layout to make it look simple and lighter
+- add kaminari pagination
+- define different and implement roles
+  - patient
+  - nurse
+  - doctor
+  - admin
 - tests, test, TESTS!
