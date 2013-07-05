@@ -1,3 +1,0 @@
-%h1 Flowsheet
-- @users.each do |user|
-  %p User: #{ link_to user.full_name, user }

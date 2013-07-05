@@ -9,7 +9,7 @@ Todo:
 - redo layout to make it look simple and lighter
 - add kaminari pagination
 - define different and implement roles
-  - patient
+  - patientchgrp
   - nurse
   - doctor
   - admin
