@@ -1,0 +1,11 @@
+= simple_form_for @cover, :html => { :class => 'form-horizontal' }  do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :cover_date
+    = f.input :total_volume
+    = f.association :user, disabled: true
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), covers_path, :class => 'btn'

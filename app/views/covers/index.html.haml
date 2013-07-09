@@ -1,0 +1,23 @@
+- model_class = Cover
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:user_id)
+      %th= model_class.human_attribute_name(:cover_date)
+      %th= model_class.human_attribute_name(:total_volume)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @covers.each do |cover|
+      %tr
+        %td= link_to cover.id, cover_path(cover)
+        %td= cover.user_id
+        %td= cover.cover_date
+        %td= cover.total_volume
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_cover_path(cover), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), cover_path(cover), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), :new_cover_path, :class => 'btn btn-primary'

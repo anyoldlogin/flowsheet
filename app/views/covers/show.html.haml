@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Cover date:
+  = @cover.cover_date
+%p
+  %b Total volume:
+  = @cover.total_volume
+%p
+  %b User:
+  = @cover.user_id
+
+= link_to 'Edit', edit_cover_path(@cover)
+\|
+= link_to 'Back', covers_path
